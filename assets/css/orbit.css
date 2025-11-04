@@ -1,0 +1,197 @@
+/* ====== ORBIT SYSTEM ====== */
+#orbiting {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.orbit-system {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  pointer-events: none;
+
+  /* responsive size + radius variables */
+  --orbit-size: min(80vw, 600px);
+  --inner-radius: calc(var(--orbit-size) * 0.28);
+  --outer-radius: calc(var(--orbit-size) * 0.42);
+  --hue: 200;
+}
+
+/* Orbit centers */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Orbit paths */
+.orbit1 .orbit-path,
+.orbit2 .orbit-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.orbit1 .orbit-path {
+  width: calc(var(--inner-radius) * 2);
+  height: calc(var(--inner-radius) * 2);
+}
+.orbit2 .orbit-path {
+  width: calc(var(--outer-radius) * 2);
+  height: calc(var(--outer-radius) * 2);
+}
+
+/* Big glowing core */
+.big-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--orbit-size) * 0.35);
+  height: calc(var(--orbit-size) * 0.35);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    hsl(var(--hue), 100%, 75%) 0%,
+    hsl(var(--hue), 100%, 50%) 50%,
+    transparent 70%
+  );
+  filter: drop-shadow(0 0 25px hsl(var(--hue), 100%, 75%))
+    drop-shadow(0 0 60px hsl(var(--hue), 100%, 60%))
+    drop-shadow(0 0 100px hsl(var(--hue), 100%, 50%));
+  animation: hue-shift 40s ease-in-out infinite alternate,
+    pulse 6s ease-in-out infinite;
+  mix-blend-mode: screen;
+  z-index: 3;
+}
+
+/* Small circles (moons) */
+.small-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+/* Inner moon */
+.small1 {
+  width: calc(var(--orbit-size) * 0.12);
+  height: calc(var(--orbit-size) * 0.12);
+  background: radial-gradient(
+    circle,
+    hsl(calc(var(--hue) + 100), 100%, 70%) 0%,
+    transparent 70%
+  );
+  animation: revolve1 10s linear infinite,
+    hue-shift-2 45s ease-in-out infinite alternate;
+}
+
+/* Outer moon */
+.small2 {
+  width: calc(var(--orbit-size) * 0.08);
+  height: calc(var(--orbit-size) * 0.08);
+  background: radial-gradient(
+    circle,
+    hsl(calc(var(--hue) + 200), 100%, 70%) 0%,
+    transparent 70%
+  );
+  animation: revolve2 16s linear infinite reverse,
+    hue-shift-3 50s ease-in-out infinite alternate;
+}
+
+/* ====== Animations ====== */
+@keyframes revolve1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg)
+      translateX(var(--inner-radius)) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg)
+      translateX(var(--inner-radius)) rotate(-360deg);
+  }
+}
+@keyframes revolve2 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg)
+      translateX(var(--outer-radius)) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg)
+      translateX(var(--outer-radius)) rotate(360deg);
+  }
+}
+
+/* Color & glow transitions */
+@keyframes hue-shift {
+  0% {
+    --hue: 200;
+  }
+  50% {
+    --hue: 320;
+  }
+  100% {
+    --hue: 40;
+  }
+}
+@keyframes hue-shift-2 {
+  0% {
+    --hue: 100;
+  }
+  50% {
+    --hue: 220;
+  }
+  100% {
+    --hue: 340;
+  }
+}
+@keyframes hue-shift-3 {
+  0% {
+    --hue: 60;
+  }
+  50% {
+    --hue: 180;
+  }
+  100% {
+    --hue: 300;
+  }
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    background-size: 35px 35px;
+  }
+  .orbit-system {
+    --orbit-size: min(80vw, 420px);
+    --inner-radius: calc(var(--orbit-size) * 0.28);
+    --outer-radius: calc(var(--orbit-size) * 0.42);
+  }
+  .big-circle {
+    filter: drop-shadow(0 0 15px hsl(var(--hue), 100%, 70%))
+      drop-shadow(0 0 40px hsl(var(--hue), 100%, 60%))
+      drop-shadow(0 0 70px hsl(var(--hue), 100%, 50%));
+  }
+}
