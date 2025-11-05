@@ -2,13 +2,13 @@
 #orbiting {
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
 }
 .orbit-system {
-  position: fixed;
+  position: absolute;
   inset: 0;
   display: flex;
   justify-content: center;
@@ -26,8 +26,8 @@
 /* Orbit centers */
 .orbit {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 65%;
   transform: translate(-50%, -50%);
 }
 
@@ -53,8 +53,8 @@
 /* Big glowing core */
 .big-circle {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 65%;
   width: calc(var(--orbit-size) * 0.35);
   height: calc(var(--orbit-size) * 0.35);
   transform: translate(-50%, -50%);
@@ -180,9 +180,32 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .orbit-system {
+    --orbit-size: min(80vw, 520px);
+    --inner-radius: calc(var(--orbit-size) * 0.28);
+    --outer-radius: calc(var(--orbit-size) * 0.42);
+  }
+  .big-circle {
+    filter: drop-shadow(0 0 15px hsl(var(--hue), 100%, 70%))
+      drop-shadow(0 0 40px hsl(var(--hue), 100%, 60%))
+      drop-shadow(0 0 70px hsl(var(--hue), 100%, 50%));
+  }
+}
+@media (max-width: 880px) {
+  .orbit{
+    top: 40%;
+    left: 60%;
+  }
+  .big-circle{
+    top: 40%;
+    left: 60%;
+  }
+}
 @media (max-width: 600px) {
-  body {
-    background-size: 35px 35px;
+  .orbit {
+    top: 55%;
+    left: 50%;
   }
   .orbit-system {
     --orbit-size: min(80vw, 420px);
@@ -190,6 +213,9 @@
     --outer-radius: calc(var(--orbit-size) * 0.42);
   }
   .big-circle {
+    top: 55%;
+    left: 50%;
+
     filter: drop-shadow(0 0 15px hsl(var(--hue), 100%, 70%))
       drop-shadow(0 0 40px hsl(var(--hue), 100%, 60%))
       drop-shadow(0 0 70px hsl(var(--hue), 100%, 50%));
