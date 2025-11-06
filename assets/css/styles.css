@@ -305,3 +305,128 @@ main .sections {
     align-items: center;
   }
 }
+
+
+
+
+
+
+.about-section {
+  width: 100%;
+  border-bottom: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-content{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Headings */
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 3px solid #3b82f6;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.subtitle {
+  width: 100%;
+  margin: 30px 0 30px 0;
+  text-align: center;
+  font-family: var(--font-josefin);
+  color: #a0a0a0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills {
+  width: 100%;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.skills-desc {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.skill-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Education Section */
+.education {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.education h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* Education in 3 Columns */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: #3b82f6;
+}
+
+.small {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
