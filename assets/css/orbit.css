@@ -204,8 +204,8 @@
 }
 @media (max-width: 600px) {
   .orbit {
-    top: 55%;
-    left: 50%;
+    top: 40%;
+    left: 80%;
   }
   .orbit-system {
     --orbit-size: min(80vw, 420px);
@@ -213,8 +213,8 @@
     --outer-radius: calc(var(--orbit-size) * 0.42);
   }
   .big-circle {
-    top: 55%;
-    left: 50%;
+    top: 40%;
+    left: 80%;
 
     filter: drop-shadow(0 0 15px hsl(var(--hue), 100%, 70%))
       drop-shadow(0 0 40px hsl(var(--hue), 100%, 60%))
