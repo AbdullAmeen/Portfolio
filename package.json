@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "\"# Portfolio\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "npx @tailwindcss/cli -i ./public/input.css -o ./public/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdullAmeen/Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdullAmeen/Portfolio/issues"
+  },
+  "homepage": "https://github.com/AbdullAmeen/Portfolio#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}

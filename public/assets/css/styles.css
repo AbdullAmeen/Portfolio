@@ -314,6 +314,10 @@ main .sections {
 }
 
 /* ---- Section ---- */
+.about-section{
+  display: flex;
+  justify-content: center;
+}
 .about-section .container {
   display: flex;
   flex-direction: column;
