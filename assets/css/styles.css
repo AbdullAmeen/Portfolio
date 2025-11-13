@@ -218,6 +218,11 @@ main .sections {
   align-items: center;
   gap: 20px;
 }
+.hero .social a:hover svg{
+  fill: #b992f7;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
 .home .buttons {
   margin-top: 20px;
   width: fit-content;
@@ -584,11 +589,16 @@ main .sections {
   z-index: 2;
 }
 @media (max-width: 800px) {
+  .not-found {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
   .saturn {
+    position: relative;
+    top: 50px;
     opacity: 1;
     width: 260px;
-    top: 18px;
-    left: 80px;
     animation: circularMotionsmall 6s ease-in-out infinite alternate;
   }
   .coming {
