@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Germania+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Play:wght@400;700&display=swap");
 
 /* Reset & Base */
+/* Allow Tailwind margins & padding to work */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
@@ -109,6 +109,7 @@ main .sections {
   width: 100%;
   height: 100vh;
   position: relative;
+  z-index: 100;
 }
 
 .home {
@@ -317,11 +318,13 @@ main .sections {
 .about-section{
   display: flex;
   justify-content: center;
+  height: fit-content;
 }
 .about-section .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
 }
 .skills-section {
   position: relative;
@@ -456,7 +459,7 @@ main .sections {
 
   /* Skills Section Layout */
   .skills-section {
-    padding: 0px 20px 150px;
+    padding: 0px 20px 30px;
     text-align: center;
   }
 
