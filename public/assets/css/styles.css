@@ -150,7 +150,7 @@ main .sections {
   /* Animate grid position */
   animation: gridMove 40s linear infinite;
   position: relative;
-  z-index: 1; /* Added: ensures section content appears above the stars */
+  z-index: 10; /* Added: ensures section content appears above the stars */
 
   box-shadow: inset 0 -50px 60px -20px #0d0d0d;
 }
@@ -165,7 +165,7 @@ main .sections {
   background-size: contain;
   opacity: 0.2;
   pointer-events: none;
-  z-index: 0; /* Added: ensures stars sit behind your content */
+  z-index: 1; /* Added: ensures stars sit behind your content */
 }
 
 /* 🌀 Grid movement animation */
