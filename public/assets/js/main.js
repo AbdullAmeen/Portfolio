@@ -4,26 +4,19 @@ const projects = [
     image: "./assets/images/portfolioscreen.png",
     desc: "A modern personal portfolio designed to highlight my skills, projects, and experience. Built with clean UI components, smooth animations, and a fully responsive layout for all devices.",
     tech: ["HTML", "CSS", "JS", "Tailwind"],
-    demo: null, 
+    demo: null,
     code: "https://github.com/abdullameen", // will show
   },
   {
-    title: "Portfolio Website",
-    image: "./assets/images/portfolioscreen.png",
-    desc: "A modern personal portfolio designed to highlight my skills, projects, and experience. Built with clean UI components, smooth animations, and a fully responsive layout for all devices.",
+    title: "Game",
+    image: "./assets/images/game.png",
+    desc: "A Classic Game built with clean UI components, smooth animations, and a fully responsive layout for all devices.",
     tech: ["HTML", "CSS", "JS", "Tailwind"],
-    demo: null, 
+    demo: "https://tictactoe-gameplay.vercel.app/",
     code: "https://github.com/abdullameen", // will show
-  },
-  {
-    title: "Portfolio Website",
-    image: "./assets/images/portfolioscreen.png",
-    desc: "A modern personal portfolio designed to highlight my skills, projects, and experience. Built with clean UI components, smooth animations, and a fully responsive layout for all devices.",
-    tech: ["HTML", "CSS", "JS", "Tailwind"],
-    demo: "https://example.com", // will show
-    code: "https://github.com/me", // will show
   }
 ];
+
 function createProjectCard(project) {
   return `
     <div
@@ -54,7 +47,7 @@ function createProjectCard(project) {
               ? `
             <div class="flex justify-start">
                 <a href="${project.demo}"
-                    class="text-purple-300 text-sm flex items-center gap-1 hover:text-purple-200 transition cursor-pointer">
+                    class="text-purple-300 text-sm flex items-center gap-1   hover:text-purple-200 transition cursor-pointer">
                     Live Demo <span>➜</span>
                 </a>
             </div>

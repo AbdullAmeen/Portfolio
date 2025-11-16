@@ -90,6 +90,7 @@ body::before {
   --glow-color: #9d4edd;
   --glow-strong: 0 0 25px #9d4edd, 0 0 50px #4cc9f0;
   --indigo-color: #6610f2;
+  --footer-color: #0b1220;
 
   --font-josefin: "Josefin Sans", sans-serif;
   --font-play: "Play", sans-serif;
@@ -107,12 +108,24 @@ main {
 }
 main .sections {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   position: relative;
   z-index: 100;
 }
+@media (min-width: 1000px) {
+  main .sections {
+    min-height: 100vh;
+  }
+  main .contact-section {
+    min-height: fit-content;
+  }
+  main .porfolio-section {
+    min-height: fit-content;
+  }
+}
 
 .home {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,7 +232,7 @@ main .sections {
   align-items: center;
   gap: 20px;
 }
-.hero .social a:hover svg{
+.hero .social a:hover svg {
   fill: #b992f7;
   transition: all 0.2s ease-in-out;
   transform: scale(1.1);
@@ -315,7 +328,7 @@ main .sections {
 }
 
 /* ---- Section ---- */
-.about-section{
+.about-section {
   display: flex;
   justify-content: center;
   height: fit-content;
@@ -691,28 +704,28 @@ main .sections {
   left: 40%;
   z-index: 0;
   transform-origin: center center;
-  
+
   animation: circularOrbit3D 30s linear infinite;
 }
 
 @keyframes circularOrbit3D {
   0% {
     transform: rotateY(25deg) rotate(0deg) translateX(1000px) rotate(0deg)
-    scale(1);
+      scale(1);
   }
   100% {
     transform: rotateY(25deg) rotate(360deg) translateX(1000px) rotate(-360deg)
-    scale(1);
+      scale(1);
   }
 }
 @keyframes circularOrbit3Ds {
   0% {
     transform: rotateY(25deg) rotate(0deg) translateX(400px) rotate(0deg)
-    scale(1);
+      scale(1);
   }
   100% {
     transform: rotateY(25deg) rotate(360deg) translateX(400px) rotate(-360deg)
-    scale(1);
+      scale(1);
   }
 }
 
@@ -722,12 +735,12 @@ main .sections {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .timeline-item {
     width: 90%;
     margin-bottom: 30px;
   }
-  
+
   .timeline::before {
     width: 2px;
     height: 74%;
@@ -735,7 +748,69 @@ main .sections {
     top: 10%;
     bottom: 0;
   }
-  .sps{
+  .sps {
     animation: circularOrbit3Ds 20s linear infinite;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 120px;
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+  background: var(--footer-color);
+  text-align: center;
+  padding: 6rem 1rem 3rem;
+  z-index: 100;
+}
+
+/* -------- MAIN CURVE -------- */
+footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;          /* wider for smooth arc */
+  height: 80px;
+  background: var(--footer-color);
+  clip-path: ellipse(50% 100% at 50% 100%);
+  z-index: 2;
+}
+
+/* -------- GLOW -------- */
+footer::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 140px;
+  background: var(--footer-color);
+  filter: blur(10px);
+  opacity: 0.45;
+  clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+
+  footer::before {
+    top: -45px;
+    height: 45px;
+    width: 140%;
+    clip-path: ellipse(45% 100% at 50% 100%);
+  }
+
+  footer::after {
+    top: -55px;
+    height: 90px;
+    width: 150%;
+    filter: blur(40px);
+    opacity: 0.4;
+    clip-path: ellipse(50% 100% at 50% 100%);
   }
 }
