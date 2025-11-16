@@ -1,12 +1,17 @@
 # dependencies
 node_modules/
 
-# build output
+# build output (only ignore dist/build, NOT output.css)
 dist/
-public/output.css
+build/
 
 # environment files
 .env
 
 # system files
 .DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
