@@ -20,9 +20,11 @@ const projects = [
 function createProjectCard(project) {
   return `
     <div
-      class="group w-[400px] h-[560px] bg-gray-900/60 backdrop-blur-md border border-white/10
-             rounded-2xl shadow-[0_0_30px_rgba(138,43,226,0.4)]
-             overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,149,255,0.7)] hover:-translate-y-1">
+class="project-card group w-[400px] max-sm:w-[90%] h-[560px] bg-gray-900/60 backdrop-blur-md border border-white/10
+       rounded-2xl shadow-[0_0_30px_rgba(138,43,226,0.4)]
+       overflow-hidden transition-all duration-300
+       hover:shadow-[0_0_40px_rgba(0,149,255,0.7)] hover:-translate-y-1"
+
 
       <!-- Image -->
       <div class="relative w-full h-64 overflow-hidden">

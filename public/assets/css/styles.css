@@ -814,3 +814,19 @@ footer::after {
     clip-path: ellipse(50% 100% at 50% 100%);
   }
 }
+@media (max-width: 420px) {
+  .project-card {
+    width: 100% !important;
+    max-width: 350px;
+    height: auto;
+  }
+}
+@media (max-height: 720px) {
+  .home {
+    height: auto !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+
