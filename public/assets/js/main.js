@@ -11,7 +11,7 @@ const projects = [
     title: "Game",
     image: "./assets/images/game.png",
     desc: "A Classic Game built with clean UI components, smooth animations, and a fully responsive layout for all devices.",
-    tech: ["HTML", "CSS", "JS", "Tailwind"],
+    tech: ["HTML", "CSS", "JS"],
     demo: "https://tictactoe-gameplay.vercel.app/",
     code: "https://github.com/abdullameen", // will show
   }
