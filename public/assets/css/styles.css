@@ -326,7 +326,16 @@ main .sections {
     align-items: center;
   }
 }
-
+@media screen and (max-width: 420px){
+  .hero .hero-content .name ,.name span{
+    font-size: 4rem;
+  }
+  .hero .hero-section .name{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    line-height: 4.3rem;
+  }
+}
 /* ---- Section ---- */
 .about-section {
   display: flex;

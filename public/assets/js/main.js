@@ -14,7 +14,7 @@ const projects = [
     tech: ["HTML", "CSS", "JS"],
     demo: "https://tictactoe-gameplay.vercel.app/",
     code: "https://github.com/abdullameen", // will show
-  }
+  },
 ];
 
 function createProjectCard(project) {
@@ -29,7 +29,7 @@ class="project-card group w-[400px] max-sm:w-[90%] h-[560px] bg-gray-900/60 back
       <!-- Image -->
       <div class="relative w-full h-64 overflow-hidden">
           <img src="${project.image}"
-               class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+               class="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110">
 
           <!-- Nebula Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
