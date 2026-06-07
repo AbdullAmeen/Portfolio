@@ -501,6 +501,7 @@ main .sections {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding: 20px;
     justify-content: center; /* ✅ Centers entire grid inside container */
     justify-items: center; /* ✅ Centers each skill inside its grid cell */
     align-items: center;
@@ -560,7 +561,8 @@ main .sections {
 }
 
 /* horizontal line */
-.timeline::before {
+
+/* .timeline::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -569,12 +571,12 @@ main .sections {
   height: 2px;
   background: var(--indigo-color);
   z-index: 1;
-}
+} */
 
 /* Each timeline card */
 .timeline-item {
-  background: #0d0d0d;
-  border: 1px solid var(--indigo-color);
+  background: conic-gradient(from 0deg, #29527070, #52417570, #29527070);
+  border: 1px solid #d397fa70;
   border-radius: 15px;
   padding: 20px;
   width: 30%;
@@ -679,13 +681,12 @@ main .sections {
 
 /* Time pill */
 .time {
-  background: #000;
-  color: var(--indigo-color);
-  border: 1px solid var(--indigo-color);
-  border-radius: 20px;
+  /* background: #000; */
+  color: #ffffff;
+  /* border: 1px solid var(--indigo-color); */
   padding: 4px 12px;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
