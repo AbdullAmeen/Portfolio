@@ -11,6 +11,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   font-family: "Josefin Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 /* 🌌 Base dark background */
 body {
@@ -992,9 +993,17 @@ footer {
     gap: 8px;
 }
 
+.view:hover{
+    transition: all 0.2s ease-in-out;
+    background: rgb(184, 211, 173);
+}
+
 .view span {
     font-size: 1rem;
     color: #3aad44;
+}
+.view:hover span{
+    color: #2a7430;
 }
 
 @media screen and (max-width: 770px) {
@@ -1008,6 +1017,10 @@ footer {
     }
     .splitter {
         height: 200px;
+    }
+    
+    .shopping{
+        display: none;
     }
 }
 
