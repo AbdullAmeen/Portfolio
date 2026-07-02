@@ -1006,6 +1006,18 @@ footer {
     color: #2a7430;
 }
 
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 770px) {
     .project-card {
         width: 100% !important;
